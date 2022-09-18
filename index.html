@@ -141,7 +141,7 @@
                             <p id="nomargin">109.0</p>
                         </div>
                         <div class="location">
-                            <a>Hardman Drive</a>
+                            <a href="../index.html">Hardman Drive</a>
                             <p id="nomargin">108.0</p>
                         </div>
                         <div class="location">
@@ -350,9 +350,9 @@
     
                         <div class="location-information">
                             <div class="coordinates">
-                                <a>&#8249;</a>
+                                <a id="needsmorewidth">&#8249; Next</a>
                                 <a id="nomargin" href="https://www.google.com/maps/place/33%C2%B058'57.4%22N+84%C2%B057'51.3%22W/@33.9826071,-84.9647875,19z/data=!3m1!4b1!4m6!3m5!1s0x0:0x76b6f22e0f6faa43!7e2!8m2!3d33.9826062!4d-84.964239">Coordinates</a>
-                                <a>&#8250;</a>
+                                <a id="needsmorewidth">Previous &#8250; </a>
                             </div>
 
                             <div class="info">
@@ -369,15 +369,15 @@
                     </div>
                     <div class="images">
                         <div class="image">
-                            <img src="img/NS-Atlanta-North/108.0 Hardman Drive/north.JPG" alt="A view looking north" height="310px" width="560px">
+                            <img id="north-img", src="img/NS-Atlanta-North/108.0 Hardman Drive/north.jpg" alt="Looking north towards Chattanooga" height="310px" width="560px">
                         </div>
     
                         <div class="image">
-                            <img src="img/NS-Atlanta-North/108.0 Hardman Drive/train.JPG" alt="A train at the location" height="310px" width="560px">
+                            <img id="train-img", src="img/NS-Atlanta-North/108.0 Hardman Drive/train.jpg" alt="A run-through BNSF intermodal at this location" height="310px" width="560px">
                         </div>
     
                         <div class="image">
-                            <img src="img/NS-Atlanta-North/108.0 Hardman Drive/south.JPG" alt="A view looking south" height="310px" width="560px">
+                            <img id="south-img", src="img/NS-Atlanta-North/108.0 Hardman Drive/south.jpg" alt="Looking south towards Atlanta" height="310px" width="560px">
                         </div>
                     </div>
                 </div>
@@ -388,6 +388,67 @@
             <p>© Alex Jones 2022</p>
         </div> 
 
+        <div id="myModal" class="modal">
+            <img class="modal-content", id="in-modal-image">
+            <div id="caption"></div>
+        </div>
+
+        <!-- Script for the top image -->
+        <script>
+            var modal = document.getElementById("myModal");
+
+            var img = document.getElementById("north-img");
+            var modalImg = document.getElementById("in-modal-image");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+
+            modal.onclick = function() {
+                modal.style.display = "none";
+            }
+
+        </script>
+
+        <!-- Script for the middle image -->
+        <script>
+            var modal = document.getElementById("myModal");
+
+            var img = document.getElementById("train-img");
+            var modalImg = document.getElementById("in-modal-image");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+
+            modal.onclick = function() {
+                modal.style.display = "none";
+            }
+        </script>
+
+        <!-- Script for the bottom image -->
+        <script>
+            var modal = document.getElementById("myModal");
+
+            var img = document.getElementById("south-img");
+            var modalImg = document.getElementById("in-modal-image");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+
+            modal.onclick = function() {
+                modal.style.display = "none";
+            }
+        </script>
+
+        <!-- Script for each city in the sidebar -->
         <script>
             var coll = document.getElementsByClassName("dropdown");
 
@@ -402,6 +463,6 @@
                 } 
               });
             }
-            </script>
+        </script>
     </body>
 </html>
