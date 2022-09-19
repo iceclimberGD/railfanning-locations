@@ -70,6 +70,7 @@ body {
     padding-left: 25px;
     padding-bottom: 10px;
     padding-top: 10px;
+    color: black;
 }
 
 .main-content {
@@ -127,16 +128,18 @@ body {
 
 .even-spacing {
     display: flex;
-    width: 300px;
+    width: 426px;
     justify-content: center; 
 }
 
 #right-spacing {
-    margin-left: 430px;
+    width: 426px;
+    text-align: left;
 }
 
 #left-spacing {
-    margin-right: 400px;
+    width: 426px;
+    text-align: right;
 }
 
   
@@ -168,6 +171,10 @@ body {
     height: 310px;
     width: 560px;
     border: 3px solid black;
+}
+
+#north-img, #south-img, #train-img {
+    object-fit: cover;
 }
 
 /*---Footer---*/
