@@ -355,7 +355,14 @@
                         <div class="location-information">
                             <div class="coordinates">
                                 <div class="even-spacing" id="left-spacing"><a id="400w", href="rauschenburg-road.html">&#8249; Previous</a></div>
-                                <div class="even-spacing"><a id="nomargin" href="https://www.google.com/maps/place/34%C2%B056'23.2%22N+84%C2%B057'41.9%22W/@34.9397721,-84.9621722,352m/data=!3m2!1e3!4b1!4m6!3m5!1s0x0:0x924c7455dbb08c6a!7e2!8m2!3d34.9397714!4d-84.9616252"><b>Coordinates</b></a></div>
+                                <div class="even-spacing", class="coordinates-copy">
+                                    <div class="tooltip">
+                                        <button id="copy-button", onclick="coordinatesClick()", onmouseout="exitFunction()"><b>Coordinates</b>
+                                            <span class="tooltiptext" id="clipboard-tooltip">Copy to clipboard</span> 
+                                        </button> 
+                                    </div>
+                                    <input type="text" value="34.939778, -84.961639" id="invisible">
+                                </div>
                                 <div class="even-spacing"><a id="400w" href="cp-cohutta.html">Next &#8250; </a></div>
                             </div>
 
@@ -466,6 +473,26 @@
                   content.style.maxHeight = content.scrollHeight + "px";
                 } 
               });
+            }
+        </script>
+
+        <!-- Script for the tooltip and clipboard copying with coordinates-->
+        <script>
+            function coordinatesClick (){
+                var copiedText = document.getElementById("invisible");
+                copiedText.select();
+                copiedText.setSelectionRange(0, 99999);
+                navigator.clipboard.writeText(copiedText.value);
+
+                var tooltip = document.getElementById("clipboard-tooltip");
+                tooltip.innerHTML = "Copied to clipboard!";
+                var button = document.getElementById("copy-button");
+                button.style.color = 'rgb(72, 72, 72)';
+            }
+
+            function exitFunction (){
+                var tooltip = document.getElementById("clipboard-tooltip");
+                tooltip.innerHTML = "Copy to clipboard";
             }
         </script>
     </body>

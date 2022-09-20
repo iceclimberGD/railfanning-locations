@@ -2,9 +2,92 @@
 <html lang="en">
     <head>
         <meta charset = "UTF-8">
-        <title>Railfanning Locations | Best Locations</title>        
+        <title>Railfanning Locations | Reading Signals</title>        
+        <link rel="stylesheet" href="signal-style.css">
     </head>
 
     <body>
-        <h1>Coming soon!</h1>
+        <div class="header">
+            <div class="left-header">
+                <img src="img/website-logo.png" alt="The website's logo" height="60px" width="60px">
+            <h2><a>Homepage Link</a></h2>
+            </div>
+            <div class="right-header">
+                <div class="search-bar">
+                    <h2>Search</h2>
+                </div>
+                <h1><a id="white-color">Railroads</a></h1>
+                <h1><a id="white-color", href="best-locations.html">Best Locations</a></h1>
+                <h1><p id="white-color">How to Read Signals</p></h1>
+            </div>
+        </div>
+
+        <div class="introduction">
+            <h1>This is a work in progress!</h1>
+        </div>
+
+        <div class="Railroad">
+            <button type="button" class="dropdown" id="nomargin">CSX</button>
+            <div class="content">
+                <div class="absolute">
+                    
+                </div>
+                <div class="intermediate">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="Railroad">
+            <button type="button" class="dropdown" id="nomargin">Norfolk Southern</button>
+            <div class="content">
+                <div class="absolute">
+                    
+                </div>
+                <div class="intermediate">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="Railroad">
+            <button type="button" class="dropdown" id="nomargin">Union Pacific</button>
+            <div class="content">
+                <div class="absolute">
+                    
+                </div>
+                <div class="intermediate">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="Railroad">
+            <button type="button" class="dropdown" id="nomargin">BNSF</button>
+            <div class="content">
+                <div class="absolute">
+                    
+                </div>
+                <div class="intermediate">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Script for each railroad's dropdowns -->
+        <script>
+            var rr = document.getElementsByClassName("dropdown");
+
+            for (var i = 0; i < rr.length; i++) {
+              rr[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+        </script>
     </body>

@@ -355,7 +355,14 @@
                         <div class="location-information">
                             <div class="coordinates">
                                 <div class="even-spacing" id="left-spacing"><a id="400w", href="cp-cohutta.html">&#8249; Previous</a></div>
-                                <div class="even-spacing"><a id="nomargin" href="https://www.google.com/maps/place/34%C2%B058'33.0%22N+84%C2%B057'28.9%22W/@34.9758444,-84.9602147,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xeea8b00c069a1118!8m2!3d34.97584!4d-84.958026"><b>Coordinates</b></a></div>
+                                <div class="even-spacing", class="coordinates-copy">
+                                    <div class="tooltip">
+                                        <button id="copy-button", onclick="coordinatesClick()", onmouseout="exitFunction()"><b>Coordinates</b>
+                                            <span class="tooltiptext" id="clipboard-tooltip">Copy to clipboard</span> 
+                                        </button> 
+                                    </div>
+                                    <input type="text" value="34.975840, -84.958026" id="invisible">
+                                </div>
                                 <div class="even-spacing"><a id="400w" href="cp-long.html">Next &#8250; </a></div>
                             </div>
 
@@ -377,7 +384,7 @@
                         </div>
     
                         <div class="image">
-                            <img id="train-img", src="../img/NS-Atlanta-North/25.2 Old Apison Road/train.jpg" alt="A northbound BNSF coal train at this location" height="310px" width="560px">
+                            <img id="train-img", src="../img/NS-Atlanta-North/25.2 Old Apison Road/train.jpg" alt="A northbound BNSF run-through coal train at this location" height="310px" width="560px">
                         </div>
     
                         <div class="image">
@@ -466,6 +473,26 @@
                   content.style.maxHeight = content.scrollHeight + "px";
                 } 
               });
+            }
+        </script>
+
+        <!-- Script for the tooltip and clipboard copying with coordinates-->
+        <script>
+            function coordinatesClick (){
+                var copiedText = document.getElementById("invisible");
+                copiedText.select();
+                copiedText.setSelectionRange(0, 99999);
+                navigator.clipboard.writeText(copiedText.value);
+
+                var tooltip = document.getElementById("clipboard-tooltip");
+                tooltip.innerHTML = "Copied to clipboard!";
+                var button = document.getElementById("copy-button");
+                button.style.color = 'rgb(72, 72, 72)';
+            }
+
+            function exitFunction (){
+                var tooltip = document.getElementById("clipboard-tooltip");
+                tooltip.innerHTML = "Copy to clipboard";
             }
         </script>
     </body>
